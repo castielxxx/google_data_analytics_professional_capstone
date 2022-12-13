@@ -1,0 +1,1300 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Google Data Analytics Professional Certificate Capstone},
+            pdfauthor={Castiel},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Google Data Analytics Professional Certificate Capstone}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Castiel}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{13/12/2022}
+
+
+\begin{document}
+\maketitle
+
+\hypertarget{setting-up-environment}{%
+\section{Setting up environment}\label{setting-up-environment}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)  }\CommentTok{\#helps wrangle data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Registered S3 methods overwritten by 'ggplot2':
+##   method         from 
+##   [.quosures     rlang
+##   c.quosures     rlang
+##   print.quosures rlang
+\end{verbatim}
+
+\begin{verbatim}
+## Registered S3 method overwritten by 'rvest':
+##   method            from
+##   read_xml.response xml2
+\end{verbatim}
+
+\begin{verbatim}
+## -- Attaching packages ----------------------------------------------------------------------------- tidyverse 1.2.1 --
+\end{verbatim}
+
+\begin{verbatim}
+## v ggplot2 3.1.1       v purrr   0.3.2  
+## v tibble  2.1.1       v dplyr   0.8.0.1
+## v tidyr   0.8.3       v stringr 1.4.0  
+## v readr   1.3.1       v forcats 0.4.0
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts -------------------------------------------------------------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(lubridate)  }\CommentTok{\#helps wrangle date attributes}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'lubridate'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:base':
+## 
+##     date
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)  }\CommentTok{\#helps visualize data}
+\FunctionTok{getwd}\NormalTok{() }\CommentTok{\#displays your working directory}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "/Users/castielchan/google_data_analytics_capstone"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{setwd}\NormalTok{(}\StringTok{"/Users/castielchan/google\_data\_analytics\_capstone"}\NormalTok{) }\CommentTok{\#sets your working directory to simplify calls to data ... make sure to use your OWN username instead of mine ;)}
+\end{Highlighting}
+\end{Shaded}
+
+getwd() \#displays your working directory
+setwd(``/Users/kevinhartman/Desktop/Divvy\_Exercise/csv'') \#sets your
+working directory to simplify calls to data \ldots{} make sure to use
+your OWN username instead of mine ;)
+
+\#===================== \# STEP 1: COLLECT DATA \#=====================
+\# Upload Divvy datasets (csv files) here
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{q2\_2019 }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"Divvy\_Trips\_2019\_Q2.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parsed with column specification:
+## cols(
+##   `01 - Rental Details Rental ID` = col_double(),
+##   `01 - Rental Details Local Start Time` = col_datetime(format = ""),
+##   `01 - Rental Details Local End Time` = col_datetime(format = ""),
+##   `01 - Rental Details Bike ID` = col_double(),
+##   `01 - Rental Details Duration In Seconds Uncapped` = col_number(),
+##   `03 - Rental Start Station ID` = col_double(),
+##   `03 - Rental Start Station Name` = col_character(),
+##   `02 - Rental End Station ID` = col_double(),
+##   `02 - Rental End Station Name` = col_character(),
+##   `User Type` = col_character(),
+##   `Member Gender` = col_character(),
+##   `05 - Member Details Member Birthday Year` = col_double()
+## )
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{q3\_2019 }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"Divvy\_Trips\_2019\_Q3.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parsed with column specification:
+## cols(
+##   trip_id = col_double(),
+##   start_time = col_datetime(format = ""),
+##   end_time = col_datetime(format = ""),
+##   bikeid = col_double(),
+##   tripduration = col_number(),
+##   from_station_id = col_double(),
+##   from_station_name = col_character(),
+##   to_station_id = col_double(),
+##   to_station_name = col_character(),
+##   usertype = col_character(),
+##   gender = col_character(),
+##   birthyear = col_double()
+## )
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{q4\_2019 }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"Divvy\_Trips\_2019\_Q4.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parsed with column specification:
+## cols(
+##   trip_id = col_double(),
+##   start_time = col_datetime(format = ""),
+##   end_time = col_datetime(format = ""),
+##   bikeid = col_double(),
+##   tripduration = col_number(),
+##   from_station_id = col_double(),
+##   from_station_name = col_character(),
+##   to_station_id = col_double(),
+##   to_station_name = col_character(),
+##   usertype = col_character(),
+##   gender = col_character(),
+##   birthyear = col_double()
+## )
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{q1\_2020 }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"Divvy\_Trips\_2020\_Q1.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Parsed with column specification:
+## cols(
+##   ride_id = col_character(),
+##   rideable_type = col_character(),
+##   started_at = col_datetime(format = ""),
+##   ended_at = col_datetime(format = ""),
+##   start_station_name = col_character(),
+##   start_station_id = col_double(),
+##   end_station_name = col_character(),
+##   end_station_id = col_double(),
+##   start_lat = col_double(),
+##   start_lng = col_double(),
+##   end_lat = col_double(),
+##   end_lng = col_double(),
+##   member_casual = col_character()
+## )
+\end{verbatim}
+
+\#==================================================== \# STEP 2:
+WRANGLE DATA AND COMBINE INTO A SINGLE FILE
+\#==================================================== \# Compare column
+names each of the files \# While the names don't have to be in the same
+order, they DO need to match perfectly before we can use a command to
+join them into one file
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colnames}\NormalTok{(q3\_2019)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "trip_id"           "start_time"        "end_time"         
+##  [4] "bikeid"            "tripduration"      "from_station_id"  
+##  [7] "from_station_name" "to_station_id"     "to_station_name"  
+## [10] "usertype"          "gender"            "birthyear"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colnames}\NormalTok{(q4\_2019)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "trip_id"           "start_time"        "end_time"         
+##  [4] "bikeid"            "tripduration"      "from_station_id"  
+##  [7] "from_station_name" "to_station_id"     "to_station_name"  
+## [10] "usertype"          "gender"            "birthyear"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colnames}\NormalTok{(q2\_2019)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "01 - Rental Details Rental ID"                   
+##  [2] "01 - Rental Details Local Start Time"            
+##  [3] "01 - Rental Details Local End Time"              
+##  [4] "01 - Rental Details Bike ID"                     
+##  [5] "01 - Rental Details Duration In Seconds Uncapped"
+##  [6] "03 - Rental Start Station ID"                    
+##  [7] "03 - Rental Start Station Name"                  
+##  [8] "02 - Rental End Station ID"                      
+##  [9] "02 - Rental End Station Name"                    
+## [10] "User Type"                                       
+## [11] "Member Gender"                                   
+## [12] "05 - Member Details Member Birthday Year"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colnames}\NormalTok{(q1\_2020)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "ride_id"            "rideable_type"      "started_at"        
+##  [4] "ended_at"           "start_station_name" "start_station_id"  
+##  [7] "end_station_name"   "end_station_id"     "start_lat"         
+## [10] "start_lng"          "end_lat"            "end_lng"           
+## [13] "member_casual"
+\end{verbatim}
+
+\hypertarget{rename-columns-to-make-them-consistent-with-q1_2020-as-this-will-be-the-supposed-going-forward-table-design-for-divvy}{%
+\section{Rename columns to make them consistent with q1\_2020 (as this
+will be the supposed going-forward table design for
+Divvy)}\label{rename-columns-to-make-them-consistent-with-q1_2020-as-this-will-be-the-supposed-going-forward-table-design-for-divvy}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(q4\_2019 }\OtherTok{\textless{}{-}} \FunctionTok{rename}\NormalTok{(q4\_2019}
+\NormalTok{                   ,}\AttributeTok{ride\_id =}\NormalTok{ trip\_id}
+\NormalTok{                   ,}\AttributeTok{rideable\_type =}\NormalTok{ bikeid }
+\NormalTok{                   ,}\AttributeTok{started\_at =}\NormalTok{ start\_time  }
+\NormalTok{                   ,}\AttributeTok{ended\_at =}\NormalTok{ end\_time  }
+\NormalTok{                   ,}\AttributeTok{start\_station\_name =}\NormalTok{ from\_station\_name }
+\NormalTok{                   ,}\AttributeTok{start\_station\_id =}\NormalTok{ from\_station\_id }
+\NormalTok{                   ,}\AttributeTok{end\_station\_name =}\NormalTok{ to\_station\_name }
+\NormalTok{                   ,}\AttributeTok{end\_station\_id =}\NormalTok{ to\_station\_id }
+\NormalTok{                   ,}\AttributeTok{member\_casual =}\NormalTok{ usertype))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 704,054 x 12
+##    ride_id started_at          ended_at            rideable_type
+##      <dbl> <dttm>              <dttm>                      <dbl>
+##  1  2.52e7 2019-10-01 00:01:39 2019-10-01 00:17:20          2215
+##  2  2.52e7 2019-10-01 00:02:16 2019-10-01 00:06:34          6328
+##  3  2.52e7 2019-10-01 00:04:32 2019-10-01 00:18:43          3003
+##  4  2.52e7 2019-10-01 00:04:32 2019-10-01 00:43:43          3275
+##  5  2.52e7 2019-10-01 00:04:34 2019-10-01 00:35:42          5294
+##  6  2.52e7 2019-10-01 00:04:38 2019-10-01 00:10:51          1891
+##  7  2.52e7 2019-10-01 00:04:52 2019-10-01 00:22:45          1061
+##  8  2.52e7 2019-10-01 00:04:57 2019-10-01 00:29:16          1274
+##  9  2.52e7 2019-10-01 00:05:20 2019-10-01 00:29:18          6011
+## 10  2.52e7 2019-10-01 00:05:20 2019-10-01 02:23:46          2957
+## # ... with 704,044 more rows, and 8 more variables: tripduration <dbl>,
+## #   start_station_id <dbl>, start_station_name <chr>,
+## #   end_station_id <dbl>, end_station_name <chr>, member_casual <chr>,
+## #   gender <chr>, birthyear <dbl>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(q3\_2019 }\OtherTok{\textless{}{-}} \FunctionTok{rename}\NormalTok{(q3\_2019}
+\NormalTok{                   ,}\AttributeTok{ride\_id =}\NormalTok{ trip\_id}
+\NormalTok{                   ,}\AttributeTok{rideable\_type =}\NormalTok{ bikeid }
+\NormalTok{                   ,}\AttributeTok{started\_at =}\NormalTok{ start\_time  }
+\NormalTok{                   ,}\AttributeTok{ended\_at =}\NormalTok{ end\_time  }
+\NormalTok{                   ,}\AttributeTok{start\_station\_name =}\NormalTok{ from\_station\_name }
+\NormalTok{                   ,}\AttributeTok{start\_station\_id =}\NormalTok{ from\_station\_id }
+\NormalTok{                   ,}\AttributeTok{end\_station\_name =}\NormalTok{ to\_station\_name }
+\NormalTok{                   ,}\AttributeTok{end\_station\_id =}\NormalTok{ to\_station\_id }
+\NormalTok{                   ,}\AttributeTok{member\_casual =}\NormalTok{ usertype))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1,640,718 x 12
+##    ride_id started_at          ended_at            rideable_type
+##      <dbl> <dttm>              <dttm>                      <dbl>
+##  1  2.35e7 2019-07-01 00:00:27 2019-07-01 00:20:41          3591
+##  2  2.35e7 2019-07-01 00:01:16 2019-07-01 00:18:44          5353
+##  3  2.35e7 2019-07-01 00:01:48 2019-07-01 00:27:42          6180
+##  4  2.35e7 2019-07-01 00:02:07 2019-07-01 00:27:10          5540
+##  5  2.35e7 2019-07-01 00:02:13 2019-07-01 00:22:26          6014
+##  6  2.35e7 2019-07-01 00:02:21 2019-07-01 00:07:31          4941
+##  7  2.35e7 2019-07-01 00:02:24 2019-07-01 00:23:12          3770
+##  8  2.35e7 2019-07-01 00:02:26 2019-07-01 00:28:16          5442
+##  9  2.35e7 2019-07-01 00:02:34 2019-07-01 00:28:57          2957
+## 10  2.35e7 2019-07-01 00:02:45 2019-07-01 00:29:14          6091
+## # ... with 1,640,708 more rows, and 8 more variables: tripduration <dbl>,
+## #   start_station_id <dbl>, start_station_name <chr>,
+## #   end_station_id <dbl>, end_station_name <chr>, member_casual <chr>,
+## #   gender <chr>, birthyear <dbl>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(q2\_2019 }\OtherTok{\textless{}{-}} \FunctionTok{rename}\NormalTok{(q2\_2019}
+\NormalTok{                   ,}\AttributeTok{ride\_id =} \StringTok{"01 {-} Rental Details Rental ID"}
+\NormalTok{                   ,}\AttributeTok{rideable\_type =} \StringTok{"01 {-} Rental Details Bike ID"} 
+\NormalTok{                   ,}\AttributeTok{started\_at =} \StringTok{"01 {-} Rental Details Local Start Time"}  
+\NormalTok{                   ,}\AttributeTok{ended\_at =} \StringTok{"01 {-} Rental Details Local End Time"}  
+\NormalTok{                   ,}\AttributeTok{start\_station\_name =} \StringTok{"03 {-} Rental Start Station Name"} 
+\NormalTok{                   ,}\AttributeTok{start\_station\_id =} \StringTok{"03 {-} Rental Start Station ID"}
+\NormalTok{                   ,}\AttributeTok{end\_station\_name =} \StringTok{"02 {-} Rental End Station Name"} 
+\NormalTok{                   ,}\AttributeTok{end\_station\_id =} \StringTok{"02 {-} Rental End Station ID"}
+\NormalTok{                   ,}\AttributeTok{member\_casual =} \StringTok{"User Type"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1,108,163 x 12
+##    ride_id started_at          ended_at            rideable_type
+##      <dbl> <dttm>              <dttm>                      <dbl>
+##  1  2.22e7 2019-04-01 00:02:22 2019-04-01 00:09:48          6251
+##  2  2.22e7 2019-04-01 00:03:02 2019-04-01 00:20:30          6226
+##  3  2.22e7 2019-04-01 00:11:07 2019-04-01 00:15:19          5649
+##  4  2.22e7 2019-04-01 00:13:01 2019-04-01 00:18:58          4151
+##  5  2.22e7 2019-04-01 00:19:26 2019-04-01 00:36:13          3270
+##  6  2.22e7 2019-04-01 00:19:39 2019-04-01 00:23:56          3123
+##  7  2.22e7 2019-04-01 00:26:33 2019-04-01 00:35:41          6418
+##  8  2.22e7 2019-04-01 00:29:48 2019-04-01 00:36:11          4513
+##  9  2.22e7 2019-04-01 00:32:07 2019-04-01 01:07:44          3280
+## 10  2.22e7 2019-04-01 00:32:19 2019-04-01 01:07:39          5534
+## # ... with 1,108,153 more rows, and 8 more variables: `01 - Rental Details
+## #   Duration In Seconds Uncapped` <dbl>, start_station_id <dbl>,
+## #   start_station_name <chr>, end_station_id <dbl>,
+## #   end_station_name <chr>, member_casual <chr>, `Member Gender` <chr>,
+## #   `05 - Member Details Member Birthday Year` <dbl>
+\end{verbatim}
+
+\hypertarget{inspect-the-dataframes-and-look-for-incongruencies}{%
+\section{Inspect the dataframes and look for
+incongruencies}\label{inspect-the-dataframes-and-look-for-incongruencies}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(q1\_2020)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Classes 'spec_tbl_df', 'tbl_df', 'tbl' and 'data.frame': 426887 obs. of  13 variables:
+##  $ ride_id           : chr  "EACB19130B0CDA4A" "8FED874C809DC021" "789F3C21E472CA96" "C9A388DAC6ABF313" ...
+##  $ rideable_type     : chr  "docked_bike" "docked_bike" "docked_bike" "docked_bike" ...
+##  $ started_at        : POSIXct, format: "2020-01-21 20:06:59" "2020-01-30 14:22:39" ...
+##  $ ended_at          : POSIXct, format: "2020-01-21 20:14:30" "2020-01-30 14:26:22" ...
+##  $ start_station_name: chr  "Western Ave & Leland Ave" "Clark St & Montrose Ave" "Broadway & Belmont Ave" "Clark St & Randolph St" ...
+##  $ start_station_id  : num  239 234 296 51 66 212 96 96 212 38 ...
+##  $ end_station_name  : chr  "Clark St & Leland Ave" "Southport Ave & Irving Park Rd" "Wilton Ave & Belmont Ave" "Fairbanks Ct & Grand Ave" ...
+##  $ end_station_id    : num  326 318 117 24 212 96 212 212 96 100 ...
+##  $ start_lat         : num  42 42 41.9 41.9 41.9 ...
+##  $ start_lng         : num  -87.7 -87.7 -87.6 -87.6 -87.6 ...
+##  $ end_lat           : num  42 42 41.9 41.9 41.9 ...
+##  $ end_lng           : num  -87.7 -87.7 -87.7 -87.6 -87.6 ...
+##  $ member_casual     : chr  "member" "member" "member" "member" ...
+##  - attr(*, "spec")=
+##   .. cols(
+##   ..   ride_id = col_character(),
+##   ..   rideable_type = col_character(),
+##   ..   started_at = col_datetime(format = ""),
+##   ..   ended_at = col_datetime(format = ""),
+##   ..   start_station_name = col_character(),
+##   ..   start_station_id = col_double(),
+##   ..   end_station_name = col_character(),
+##   ..   end_station_id = col_double(),
+##   ..   start_lat = col_double(),
+##   ..   start_lng = col_double(),
+##   ..   end_lat = col_double(),
+##   ..   end_lng = col_double(),
+##   ..   member_casual = col_character()
+##   .. )
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(q4\_2019)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Classes 'spec_tbl_df', 'tbl_df', 'tbl' and 'data.frame': 704054 obs. of  12 variables:
+##  $ ride_id           : num  25223640 25223641 25223642 25223643 25223644 ...
+##  $ started_at        : POSIXct, format: "2019-10-01 00:01:39" "2019-10-01 00:02:16" ...
+##  $ ended_at          : POSIXct, format: "2019-10-01 00:17:20" "2019-10-01 00:06:34" ...
+##  $ rideable_type     : num  2215 6328 3003 3275 5294 ...
+##  $ tripduration      : num  940 258 850 2350 1867 ...
+##  $ start_station_id  : num  20 19 84 313 210 156 84 156 156 336 ...
+##  $ start_station_name: chr  "Sheffield Ave & Kingsbury St" "Throop (Loomis) St & Taylor St" "Milwaukee Ave & Grand Ave" "Lakeview Ave & Fullerton Pkwy" ...
+##  $ end_station_id    : num  309 241 199 290 382 226 142 463 463 336 ...
+##  $ end_station_name  : chr  "Leavitt St & Armitage Ave" "Morgan St & Polk St" "Wabash Ave & Grand Ave" "Kedzie Ave & Palmer Ct" ...
+##  $ member_casual     : chr  "Subscriber" "Subscriber" "Subscriber" "Subscriber" ...
+##  $ gender            : chr  "Male" "Male" "Female" "Male" ...
+##  $ birthyear         : num  1987 1998 1991 1990 1987 ...
+##  - attr(*, "spec")=
+##   .. cols(
+##   ..   trip_id = col_double(),
+##   ..   start_time = col_datetime(format = ""),
+##   ..   end_time = col_datetime(format = ""),
+##   ..   bikeid = col_double(),
+##   ..   tripduration = col_number(),
+##   ..   from_station_id = col_double(),
+##   ..   from_station_name = col_character(),
+##   ..   to_station_id = col_double(),
+##   ..   to_station_name = col_character(),
+##   ..   usertype = col_character(),
+##   ..   gender = col_character(),
+##   ..   birthyear = col_double()
+##   .. )
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(q3\_2019)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Classes 'spec_tbl_df', 'tbl_df', 'tbl' and 'data.frame': 1640718 obs. of  12 variables:
+##  $ ride_id           : num  23479388 23479389 23479390 23479391 23479392 ...
+##  $ started_at        : POSIXct, format: "2019-07-01 00:00:27" "2019-07-01 00:01:16" ...
+##  $ ended_at          : POSIXct, format: "2019-07-01 00:20:41" "2019-07-01 00:18:44" ...
+##  $ rideable_type     : num  3591 5353 6180 5540 6014 ...
+##  $ tripduration      : num  1214 1048 1554 1503 1213 ...
+##  $ start_station_id  : num  117 381 313 313 168 300 168 313 43 43 ...
+##  $ start_station_name: chr  "Wilton Ave & Belmont Ave" "Western Ave & Monroe St" "Lakeview Ave & Fullerton Pkwy" "Lakeview Ave & Fullerton Pkwy" ...
+##  $ end_station_id    : num  497 203 144 144 62 232 62 144 195 195 ...
+##  $ end_station_name  : chr  "Kimball Ave & Belmont Ave" "Western Ave & 21st St" "Larrabee St & Webster Ave" "Larrabee St & Webster Ave" ...
+##  $ member_casual     : chr  "Subscriber" "Customer" "Customer" "Customer" ...
+##  $ gender            : chr  "Male" NA NA NA ...
+##  $ birthyear         : num  1992 NA NA NA NA ...
+##  - attr(*, "spec")=
+##   .. cols(
+##   ..   trip_id = col_double(),
+##   ..   start_time = col_datetime(format = ""),
+##   ..   end_time = col_datetime(format = ""),
+##   ..   bikeid = col_double(),
+##   ..   tripduration = col_number(),
+##   ..   from_station_id = col_double(),
+##   ..   from_station_name = col_character(),
+##   ..   to_station_id = col_double(),
+##   ..   to_station_name = col_character(),
+##   ..   usertype = col_character(),
+##   ..   gender = col_character(),
+##   ..   birthyear = col_double()
+##   .. )
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(q2\_2019)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Classes 'spec_tbl_df', 'tbl_df', 'tbl' and 'data.frame': 1108163 obs. of  12 variables:
+##  $ ride_id                                         : num  22178529 22178530 22178531 22178532 22178533 ...
+##  $ started_at                                      : POSIXct, format: "2019-04-01 00:02:22" "2019-04-01 00:03:02" ...
+##  $ ended_at                                        : POSIXct, format: "2019-04-01 00:09:48" "2019-04-01 00:20:30" ...
+##  $ rideable_type                                   : num  6251 6226 5649 4151 3270 ...
+##  $ 01 - Rental Details Duration In Seconds Uncapped: num  446 1048 252 357 1007 ...
+##  $ start_station_id                                : num  81 317 283 26 202 420 503 260 211 211 ...
+##  $ start_station_name                              : chr  "Daley Center Plaza" "Wood St & Taylor St" "LaSalle St & Jackson Blvd" "McClurg Ct & Illinois St" ...
+##  $ end_station_id                                  : num  56 59 174 133 129 426 500 499 211 211 ...
+##  $ end_station_name                                : chr  "Desplaines St & Kinzie St" "Wabash Ave & Roosevelt Rd" "Canal St & Madison St" "Kingsbury St & Kinzie St" ...
+##  $ member_casual                                   : chr  "Subscriber" "Subscriber" "Subscriber" "Subscriber" ...
+##  $ Member Gender                                   : chr  "Male" "Female" "Male" "Male" ...
+##  $ 05 - Member Details Member Birthday Year        : num  1975 1984 1990 1993 1992 ...
+##  - attr(*, "spec")=
+##   .. cols(
+##   ..   `01 - Rental Details Rental ID` = col_double(),
+##   ..   `01 - Rental Details Local Start Time` = col_datetime(format = ""),
+##   ..   `01 - Rental Details Local End Time` = col_datetime(format = ""),
+##   ..   `01 - Rental Details Bike ID` = col_double(),
+##   ..   `01 - Rental Details Duration In Seconds Uncapped` = col_number(),
+##   ..   `03 - Rental Start Station ID` = col_double(),
+##   ..   `03 - Rental Start Station Name` = col_character(),
+##   ..   `02 - Rental End Station ID` = col_double(),
+##   ..   `02 - Rental End Station Name` = col_character(),
+##   ..   `User Type` = col_character(),
+##   ..   `Member Gender` = col_character(),
+##   ..   `05 - Member Details Member Birthday Year` = col_double()
+##   .. )
+\end{verbatim}
+
+\hypertarget{convert-ride_id-and-rideable_type-to-character-so-that-they-can-stack-correctly}{%
+\section{Convert ride\_id and rideable\_type to character so that thßey
+can stack
+correctly}\label{convert-ride_id-and-rideable_type-to-character-so-that-they-can-stack-correctly}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{q4\_2019 }\OtherTok{\textless{}{-}}  \FunctionTok{mutate}\NormalTok{(q4\_2019, }\AttributeTok{ride\_id =} \FunctionTok{as.character}\NormalTok{(ride\_id)}
+\NormalTok{                   ,}\AttributeTok{rideable\_type =} \FunctionTok{as.character}\NormalTok{(rideable\_type)) }
+\NormalTok{q3\_2019 }\OtherTok{\textless{}{-}}  \FunctionTok{mutate}\NormalTok{(q3\_2019, }\AttributeTok{ride\_id =} \FunctionTok{as.character}\NormalTok{(ride\_id)}
+\NormalTok{                   ,}\AttributeTok{rideable\_type =} \FunctionTok{as.character}\NormalTok{(rideable\_type)) }
+\NormalTok{q2\_2019 }\OtherTok{\textless{}{-}}  \FunctionTok{mutate}\NormalTok{(q2\_2019, }\AttributeTok{ride\_id =} \FunctionTok{as.character}\NormalTok{(ride\_id)}
+\NormalTok{                   ,}\AttributeTok{rideable\_type =} \FunctionTok{as.character}\NormalTok{(rideable\_type)) }
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{stack-individual-quarters-data-frames-into-one-big-data-frame}{%
+\section{Stack individual quarter's data frames into one big data
+frame}\label{stack-individual-quarters-data-frames-into-one-big-data-frame}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{all\_trips }\OtherTok{\textless{}{-}} \FunctionTok{bind\_rows}\NormalTok{(q2\_2019, q3\_2019, q4\_2019, q1\_2020)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{remove-lat-long-birthyear-and-gender-fields-as-this-data-was-dropped-beginning-in-2020}{%
+\section{Remove lat, long, birthyear, and gender fields as this data was
+dropped beginning in
+2020}\label{remove-lat-long-birthyear-and-gender-fields-as-this-data-was-dropped-beginning-in-2020}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{all\_trips }\OtherTok{\textless{}{-}}\NormalTok{ all\_trips }\SpecialCharTok{\%\textgreater{}\%}  
+  \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(start\_lat, start\_lng, end\_lat, end\_lng, birthyear, gender, }\StringTok{"01 {-} Rental Details Duration In Seconds Uncapped"}\NormalTok{, }\StringTok{"05 {-} Member Details Member Birthday Year"}\NormalTok{, }\StringTok{"Member Gender"}\NormalTok{, }\StringTok{"tripduration"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\#====================================================== \# STEP 3:
+CLEAN UP AND ADD DATA TO PREPARE FOR ANALYSIS
+\#====================================================== \# Inspect the
+new table that has been created
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colnames}\NormalTok{(all\_trips)  }\CommentTok{\#List of column names}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "ride_id"            "started_at"         "ended_at"          
+## [4] "rideable_type"      "start_station_id"   "start_station_name"
+## [7] "end_station_id"     "end_station_name"   "member_casual"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{nrow}\NormalTok{(all\_trips)  }\CommentTok{\#How many rows are in data frame?}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3879822
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(all\_trips)  }\CommentTok{\#Dimensions of the data frame?}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3879822       9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(all\_trips)  }\CommentTok{\#See the first 6 rows of data frame.  Also tail(all\_trips)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 9
+##   ride_id started_at          ended_at            rideable_type
+##   <chr>   <dttm>              <dttm>              <chr>        
+## 1 221785~ 2019-04-01 00:02:22 2019-04-01 00:09:48 6251         
+## 2 221785~ 2019-04-01 00:03:02 2019-04-01 00:20:30 6226         
+## 3 221785~ 2019-04-01 00:11:07 2019-04-01 00:15:19 5649         
+## 4 221785~ 2019-04-01 00:13:01 2019-04-01 00:18:58 4151         
+## 5 221785~ 2019-04-01 00:19:26 2019-04-01 00:36:13 3270         
+## 6 221785~ 2019-04-01 00:19:39 2019-04-01 00:23:56 3123         
+## # ... with 5 more variables: start_station_id <dbl>,
+## #   start_station_name <chr>, end_station_id <dbl>,
+## #   end_station_name <chr>, member_casual <chr>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(all\_trips)  }\CommentTok{\#See list of columns and data types (numeric, character, etc)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Classes 'spec_tbl_df', 'tbl_df', 'tbl' and 'data.frame': 3879822 obs. of  9 variables:
+##  $ ride_id           : chr  "22178529" "22178530" "22178531" "22178532" ...
+##  $ started_at        : POSIXct, format: "2019-04-01 00:02:22" "2019-04-01 00:03:02" ...
+##  $ ended_at          : POSIXct, format: "2019-04-01 00:09:48" "2019-04-01 00:20:30" ...
+##  $ rideable_type     : chr  "6251" "6226" "5649" "4151" ...
+##  $ start_station_id  : num  81 317 283 26 202 420 503 260 211 211 ...
+##  $ start_station_name: chr  "Daley Center Plaza" "Wood St & Taylor St" "LaSalle St & Jackson Blvd" "McClurg Ct & Illinois St" ...
+##  $ end_station_id    : num  56 59 174 133 129 426 500 499 211 211 ...
+##  $ end_station_name  : chr  "Desplaines St & Kinzie St" "Wabash Ave & Roosevelt Rd" "Canal St & Madison St" "Kingsbury St & Kinzie St" ...
+##  $ member_casual     : chr  "Subscriber" "Subscriber" "Subscriber" "Subscriber" ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(all\_trips)  }\CommentTok{\#Statistical summary of data. Mainly for numerics}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    ride_id            started_at                 
+##  Length:3879822     Min.   :2019-04-01 00:02:22  
+##  Class :character   1st Qu.:2019-06-23 07:49:09  
+##  Mode  :character   Median :2019-08-14 17:43:38  
+##                     Mean   :2019-08-26 00:49:59  
+##                     3rd Qu.:2019-10-12 12:10:21  
+##                     Max.   :2020-03-31 23:51:34  
+##                                                  
+##     ended_at                   rideable_type      start_station_id
+##  Min.   :2019-04-01 00:09:48   Length:3879822     Min.   :  1.0   
+##  1st Qu.:2019-06-23 08:20:27   Class :character   1st Qu.: 77.0   
+##  Median :2019-08-14 18:02:04   Mode  :character   Median :174.0   
+##  Mean   :2019-08-26 01:14:37                      Mean   :202.9   
+##  3rd Qu.:2019-10-12 12:36:16                      3rd Qu.:291.0   
+##  Max.   :2020-05-19 20:10:34                      Max.   :675.0   
+##                                                                   
+##  start_station_name end_station_id  end_station_name   member_casual     
+##  Length:3879822     Min.   :  1.0   Length:3879822     Length:3879822    
+##  Class :character   1st Qu.: 77.0   Class :character   Class :character  
+##  Mode  :character   Median :174.0   Mode  :character   Mode  :character  
+##                     Mean   :203.8                                        
+##                     3rd Qu.:291.0                                        
+##                     Max.   :675.0                                        
+##                     NA's   :1
+\end{verbatim}
+
+\hypertarget{there-are-a-few-problems-we-will-need-to-fix}{%
+\section{There are a few problems we will need to
+fix:}\label{there-are-a-few-problems-we-will-need-to-fix}}
+
+\hypertarget{in-the-member_casual-column-there-are-two-names-for-members-member-and-subscriber-and-two-names-for-casual-riders-customer-and-casual.-we-will-need-to-consolidate-that-from-four-to-two-labels.}{%
+\section{(1) In the ``member\_casual'' column, there are two names for
+members (``member'' and ``Subscriber'') and two names for casual riders
+(``Customer'' and ``casual''). We will need to consolidate that from
+four to two
+labels.}\label{in-the-member_casual-column-there-are-two-names-for-members-member-and-subscriber-and-two-names-for-casual-riders-customer-and-casual.-we-will-need-to-consolidate-that-from-four-to-two-labels.}}
+
+\hypertarget{the-data-can-only-be-aggregated-at-the-ride-level-which-is-too-granular.-we-will-want-to-add-some-additional-columns-of-data-such-as-day-month-year-that-provide-additional-opportunities-to-aggregate-the-data.}{%
+\section{(2) The data can only be aggregated at the ride-level, which is
+too granular. We will want to add some additional columns of data --
+such as day, month, year -- that provide additional opportunities to
+aggregate the
+data.}\label{the-data-can-only-be-aggregated-at-the-ride-level-which-is-too-granular.-we-will-want-to-add-some-additional-columns-of-data-such-as-day-month-year-that-provide-additional-opportunities-to-aggregate-the-data.}}
+
+\hypertarget{we-will-want-to-add-a-calculated-field-for-length-of-ride-since-the-2020q1-data-did-not-have-the-tripduration-column.-we-will-add-ride_length-to-the-entire-dataframe-for-consistency.}{%
+\section{(3) We will want to add a calculated field for length of ride
+since the 2020Q1 data did not have the ``tripduration'' column. We will
+add ``ride\_length'' to the entire dataframe for
+consistency.}\label{we-will-want-to-add-a-calculated-field-for-length-of-ride-since-the-2020q1-data-did-not-have-the-tripduration-column.-we-will-add-ride_length-to-the-entire-dataframe-for-consistency.}}
+
+\hypertarget{there-are-some-rides-where-tripduration-shows-up-as-negative-including-several-hundred-rides-where-divvy-took-bikes-out-of-circulation-for-quality-control-reasons.-we-will-want-to-delete-these-rides.}{%
+\section{(4) There are some rides where tripduration shows up as
+negative, including several hundred rides where Divvy took bikes out of
+circulation for Quality Control reasons. We will want to delete these
+rides.}\label{there-are-some-rides-where-tripduration-shows-up-as-negative-including-several-hundred-rides-where-divvy-took-bikes-out-of-circulation-for-quality-control-reasons.-we-will-want-to-delete-these-rides.}}
+
+\hypertarget{in-the-member_casual-column-replace-subscriber-with-member-and-customer-with-casual}{%
+\section{In the ``member\_casual'' column, replace ``Subscriber'' with
+``member'' and ``Customer'' with
+``casual''}\label{in-the-member_casual-column-replace-subscriber-with-member-and-customer-with-casual}}
+
+\hypertarget{before-2020-divvy-used-different-labels-for-these-two-types-of-riders-we-will-want-to-make-our-dataframe-consistent-with-their-current-nomenclature}{%
+\section{Before 2020, Divvy used different labels for these two types of
+riders \ldots{} we will want to make our dataframe consistent with their
+current
+nomenclature}\label{before-2020-divvy-used-different-labels-for-these-two-types-of-riders-we-will-want-to-make-our-dataframe-consistent-with-their-current-nomenclature}}
+
+\hypertarget{n.b.-level-is-a-special-property-of-a-column-that-is-retained-even-if-a-subset-does-not-contain-any-values-from-a-specific-level}{%
+\section{N.B.: ``Level'' is a special property of a column that is
+retained even if a subset does not contain any values from a specific
+level}\label{n.b.-level-is-a-special-property-of-a-column-that-is-retained-even-if-a-subset-does-not-contain-any-values-from-a-specific-level}}
+
+\hypertarget{begin-by-seeing-how-many-observations-fall-under-each-usertype}{%
+\section{Begin by seeing how many observations fall under each
+usertype}\label{begin-by-seeing-how-many-observations-fall-under-each-usertype}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(all\_trips}\SpecialCharTok{$}\NormalTok{member\_casual)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##     casual   Customer     member Subscriber 
+##      48480     857474     378407    2595461
+\end{verbatim}
+
+\hypertarget{reassign-to-the-desired-values-we-will-go-with-the-current-2020-labels}{%
+\section{Reassign to the desired values (we will go with the current
+2020
+labels)}\label{reassign-to-the-desired-values-we-will-go-with-the-current-2020-labels}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{all\_trips }\OtherTok{\textless{}{-}}\NormalTok{  all\_trips }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{member\_casual =} \FunctionTok{recode}\NormalTok{(member\_casual}
+\NormalTok{                                ,}\StringTok{"Subscriber"} \OtherTok{=} \StringTok{"member"}
+\NormalTok{                                ,}\StringTok{"Customer"} \OtherTok{=} \StringTok{"casual"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{check-to-make-sure-the-proper-number-of-observations-were-reassigned}{%
+\section{Check to make sure the proper number of observations were
+reassigned}\label{check-to-make-sure-the-proper-number-of-observations-were-reassigned}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(all\_trips}\SpecialCharTok{$}\NormalTok{member\_casual)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  casual  member 
+##  905954 2973868
+\end{verbatim}
+
+\hypertarget{add-columns-that-list-the-date-month-day-and-year-of-each-ride}{%
+\section{Add columns that list the date, month, day, and year of each
+ride}\label{add-columns-that-list-the-date-month-day-and-year-of-each-ride}}
+
+\hypertarget{this-will-allow-us-to-aggregate-ride-data-for-each-month-day-or-year-before-completing-these-operations-we-could-only-aggregate-at-the-ride-level}{%
+\section{This will allow us to aggregate ride data for each month, day,
+or year \ldots{} before completing these operations we could only
+aggregate at the ride
+level}\label{this-will-allow-us-to-aggregate-ride-data-for-each-month-day-or-year-before-completing-these-operations-we-could-only-aggregate-at-the-ride-level}}
+
+\hypertarget{httpswww.statmethods.netinputdates.html-more-on-date-formats-in-r-found-at-that-link}{%
+\section{\texorpdfstring{\url{https://www.statmethods.net/input/dates.html}
+more on date formats in R found at that
+link}{https://www.statmethods.net/input/dates.html more on date formats in R found at that link}}\label{httpswww.statmethods.netinputdates.html-more-on-date-formats-in-r-found-at-that-link}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{all\_trips}\SpecialCharTok{$}\NormalTok{date }\OtherTok{\textless{}{-}} \FunctionTok{as.Date}\NormalTok{(all\_trips}\SpecialCharTok{$}\NormalTok{started\_at) }\CommentTok{\#The default format is yyyy{-}mm{-}dd}
+\NormalTok{all\_trips}\SpecialCharTok{$}\NormalTok{month }\OtherTok{\textless{}{-}} \FunctionTok{format}\NormalTok{(}\FunctionTok{as.Date}\NormalTok{(all\_trips}\SpecialCharTok{$}\NormalTok{date), }\StringTok{"\%m"}\NormalTok{)}
+\NormalTok{all\_trips}\SpecialCharTok{$}\NormalTok{day }\OtherTok{\textless{}{-}} \FunctionTok{format}\NormalTok{(}\FunctionTok{as.Date}\NormalTok{(all\_trips}\SpecialCharTok{$}\NormalTok{date), }\StringTok{"\%d"}\NormalTok{)}
+\NormalTok{all\_trips}\SpecialCharTok{$}\NormalTok{year }\OtherTok{\textless{}{-}} \FunctionTok{format}\NormalTok{(}\FunctionTok{as.Date}\NormalTok{(all\_trips}\SpecialCharTok{$}\NormalTok{date), }\StringTok{"\%Y"}\NormalTok{)}
+\NormalTok{all\_trips}\SpecialCharTok{$}\NormalTok{day\_of\_week }\OtherTok{\textless{}{-}} \FunctionTok{format}\NormalTok{(}\FunctionTok{as.Date}\NormalTok{(all\_trips}\SpecialCharTok{$}\NormalTok{date), }\StringTok{"\%A"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{add-a-ride_length-calculation-to-all_trips-in-seconds}{%
+\section{Add a ``ride\_length'' calculation to all\_trips (in
+seconds)}\label{add-a-ride_length-calculation-to-all_trips-in-seconds}}
+
+\hypertarget{httpsstat.ethz.chr-manualr-devellibrarybasehtmldifftime.html}{%
+\section{\texorpdfstring{\url{https://stat.ethz.ch/R-manual/R-devel/library/base/html/difftime.html}}{https://stat.ethz.ch/R-manual/R-devel/library/base/html/difftime.html}}\label{httpsstat.ethz.chr-manualr-devellibrarybasehtmldifftime.html}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{all\_trips}\SpecialCharTok{$}\NormalTok{ride\_length }\OtherTok{\textless{}{-}} \FunctionTok{difftime}\NormalTok{(all\_trips}\SpecialCharTok{$}\NormalTok{ended\_at,all\_trips}\SpecialCharTok{$}\NormalTok{started\_at)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{inspect-the-structure-of-the-columns}{%
+\section{Inspect the structure of the
+columns}\label{inspect-the-structure-of-the-columns}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(all\_trips)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Classes 'spec_tbl_df', 'tbl_df', 'tbl' and 'data.frame': 3879822 obs. of  15 variables:
+##  $ ride_id           : chr  "22178529" "22178530" "22178531" "22178532" ...
+##  $ started_at        : POSIXct, format: "2019-04-01 00:02:22" "2019-04-01 00:03:02" ...
+##  $ ended_at          : POSIXct, format: "2019-04-01 00:09:48" "2019-04-01 00:20:30" ...
+##  $ rideable_type     : chr  "6251" "6226" "5649" "4151" ...
+##  $ start_station_id  : num  81 317 283 26 202 420 503 260 211 211 ...
+##  $ start_station_name: chr  "Daley Center Plaza" "Wood St & Taylor St" "LaSalle St & Jackson Blvd" "McClurg Ct & Illinois St" ...
+##  $ end_station_id    : num  56 59 174 133 129 426 500 499 211 211 ...
+##  $ end_station_name  : chr  "Desplaines St & Kinzie St" "Wabash Ave & Roosevelt Rd" "Canal St & Madison St" "Kingsbury St & Kinzie St" ...
+##  $ member_casual     : chr  "member" "member" "member" "member" ...
+##  $ date              : Date, format: "2019-04-01" "2019-04-01" ...
+##  $ month             : chr  "04" "04" "04" "04" ...
+##  $ day               : chr  "01" "01" "01" "01" ...
+##  $ year              : chr  "2019" "2019" "2019" "2019" ...
+##  $ day_of_week       : chr  "Monday" "Monday" "Monday" "Monday" ...
+##  $ ride_length       : 'difftime' num  446 1048 252 357 ...
+##   ..- attr(*, "units")= chr "secs"
+\end{verbatim}
+
+\hypertarget{convert-ride_length-from-factor-to-numeric-so-we-can-run-calculations-on-the-data}{%
+\section{Convert ``ride\_length'' from Factor to numeric so we can run
+calculations on the
+data}\label{convert-ride_length-from-factor-to-numeric-so-we-can-run-calculations-on-the-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{is.factor}\NormalTok{(all\_trips}\SpecialCharTok{$}\NormalTok{ride\_length)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{all\_trips}\SpecialCharTok{$}\NormalTok{ride\_length }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{as.character}\NormalTok{(all\_trips}\SpecialCharTok{$}\NormalTok{ride\_length))}
+\FunctionTok{is.numeric}\NormalTok{(all\_trips}\SpecialCharTok{$}\NormalTok{ride\_length)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\hypertarget{remove-bad-data}{%
+\section{Remove ``bad'' data}\label{remove-bad-data}}
+
+\hypertarget{the-dataframe-includes-a-few-hundred-entries-when-bikes-were-taken-out-of-docks-and-checked-for-quality-by-divvy-or-ride_length-was-negative}{%
+\section{The dataframe includes a few hundred entries when bikes were
+taken out of docks and checked for quality by Divvy or ride\_length was
+negative}\label{the-dataframe-includes-a-few-hundred-entries-when-bikes-were-taken-out-of-docks-and-checked-for-quality-by-divvy-or-ride_length-was-negative}}
+
+\hypertarget{we-will-create-a-new-version-of-the-dataframe-v2-since-data-is-being-removed}{%
+\section{We will create a new version of the dataframe (v2) since data
+is being
+removed}\label{we-will-create-a-new-version-of-the-dataframe-v2-since-data-is-being-removed}}
+
+\hypertarget{httpswww.datasciencemadesimple.comdelete-or-drop-rows-in-r-with-conditions-2}{%
+\section{\texorpdfstring{\url{https://www.datasciencemadesimple.com/delete-or-drop-rows-in-r-with-conditions-2/}}{https://www.datasciencemadesimple.com/delete-or-drop-rows-in-r-with-conditions-2/}}\label{httpswww.datasciencemadesimple.comdelete-or-drop-rows-in-r-with-conditions-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{all\_trips\_v2 }\OtherTok{\textless{}{-}}\NormalTok{ all\_trips[}\SpecialCharTok{!}\NormalTok{(all\_trips}\SpecialCharTok{$}\NormalTok{start\_station\_name }\SpecialCharTok{==} \StringTok{"HQ QR"} \SpecialCharTok{|}\NormalTok{ all\_trips}\SpecialCharTok{$}\NormalTok{ride\_length}\SpecialCharTok{\textless{}}\DecValTok{0}\NormalTok{),]}
+\end{Highlighting}
+\end{Shaded}
+
+\#===================================== \# STEP 4: CONDUCT DESCRIPTIVE
+ANALYSIS \#===================================== \# Descriptive analysis
+on ride\_length (all figures in seconds)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(all\_trips\_v2}\SpecialCharTok{$}\NormalTok{ride\_length) }\CommentTok{\#straight average (total ride length / rides)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1479.139
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{median}\NormalTok{(all\_trips\_v2}\SpecialCharTok{$}\NormalTok{ride\_length) }\CommentTok{\#midpoint number in the ascending array of ride lengths}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 712
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{max}\NormalTok{(all\_trips\_v2}\SpecialCharTok{$}\NormalTok{ride\_length) }\CommentTok{\#longest ride}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 9387024
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{min}\NormalTok{(all\_trips\_v2}\SpecialCharTok{$}\NormalTok{ride\_length) }\CommentTok{\#shortest ride}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\hypertarget{you-can-condense-the-four-lines-above-to-one-line-using-summary-on-the-specific-attribute}{%
+\section{You can condense the four lines above to one line using
+summary() on the specific
+attribute}\label{you-can-condense-the-four-lines-above-to-one-line-using-summary-on-the-specific-attribute}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(all\_trips\_v2}\SpecialCharTok{$}\NormalTok{ride\_length)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##       1     412     712    1479    1289 9387024
+\end{verbatim}
+
+\hypertarget{compare-members-and-casual-users}{%
+\section{Compare members and casual
+users}\label{compare-members-and-casual-users}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{aggregate}\NormalTok{(all\_trips\_v2}\SpecialCharTok{$}\NormalTok{ride\_length }\SpecialCharTok{\textasciitilde{}}\NormalTok{ all\_trips\_v2}\SpecialCharTok{$}\NormalTok{member\_casual, }\AttributeTok{FUN =}\NormalTok{ mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   all_trips_v2$member_casual all_trips_v2$ride_length
+## 1                     casual                3552.7502
+## 2                     member                 850.0662
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{aggregate}\NormalTok{(all\_trips\_v2}\SpecialCharTok{$}\NormalTok{ride\_length }\SpecialCharTok{\textasciitilde{}}\NormalTok{ all\_trips\_v2}\SpecialCharTok{$}\NormalTok{member\_casual, }\AttributeTok{FUN =}\NormalTok{ median)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   all_trips_v2$member_casual all_trips_v2$ride_length
+## 1                     casual                     1546
+## 2                     member                      589
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{aggregate}\NormalTok{(all\_trips\_v2}\SpecialCharTok{$}\NormalTok{ride\_length }\SpecialCharTok{\textasciitilde{}}\NormalTok{ all\_trips\_v2}\SpecialCharTok{$}\NormalTok{member\_casual, }\AttributeTok{FUN =}\NormalTok{ max)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   all_trips_v2$member_casual all_trips_v2$ride_length
+## 1                     casual                  9387024
+## 2                     member                  9056634
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{aggregate}\NormalTok{(all\_trips\_v2}\SpecialCharTok{$}\NormalTok{ride\_length }\SpecialCharTok{\textasciitilde{}}\NormalTok{ all\_trips\_v2}\SpecialCharTok{$}\NormalTok{member\_casual, }\AttributeTok{FUN =}\NormalTok{ min)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   all_trips_v2$member_casual all_trips_v2$ride_length
+## 1                     casual                        2
+## 2                     member                        1
+\end{verbatim}
+
+\hypertarget{see-the-average-ride-time-by-each-day-for-members-vs-casual-users}{%
+\section{See the average ride time by each day for members vs casual
+users}\label{see-the-average-ride-time-by-each-day-for-members-vs-casual-users}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{aggregate}\NormalTok{(all\_trips\_v2}\SpecialCharTok{$}\NormalTok{ride\_length }\SpecialCharTok{\textasciitilde{}}\NormalTok{ all\_trips\_v2}\SpecialCharTok{$}\NormalTok{member\_casual }\SpecialCharTok{+}\NormalTok{ all\_trips\_v2}\SpecialCharTok{$}\NormalTok{day\_of\_week, }\AttributeTok{FUN =}\NormalTok{ mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    all_trips_v2$member_casual all_trips_v2$day_of_week
+## 1                      casual                   Friday
+## 2                      member                   Friday
+## 3                      casual                   Monday
+## 4                      member                   Monday
+## 5                      casual                 Saturday
+## 6                      member                 Saturday
+## 7                      casual                   Sunday
+## 8                      member                   Sunday
+## 9                      casual                 Thursday
+## 10                     member                 Thursday
+## 11                     casual                  Tuesday
+## 12                     member                  Tuesday
+## 13                     casual                Wednesday
+## 14                     member                Wednesday
+##    all_trips_v2$ride_length
+## 1                 3773.8351
+## 2                  824.5305
+## 3                 3372.2869
+## 4                  842.5726
+## 5                 3331.9138
+## 6                  968.9337
+## 7                 3581.4054
+## 8                  919.9746
+## 9                 3682.9847
+## 10                 823.9278
+## 11                3596.3599
+## 12                 826.1427
+## 13                3718.6619
+## 14                 823.9996
+\end{verbatim}
+
+\hypertarget{notice-that-the-days-of-the-week-are-out-of-order.-lets-fix-that.}{%
+\section{Notice that the days of the week are out of order. Let's fix
+that.}\label{notice-that-the-days-of-the-week-are-out-of-order.-lets-fix-that.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{all\_trips\_v2}\SpecialCharTok{$}\NormalTok{day\_of\_week }\OtherTok{\textless{}{-}} \FunctionTok{ordered}\NormalTok{(all\_trips\_v2}\SpecialCharTok{$}\NormalTok{day\_of\_week, }\AttributeTok{levels=}\FunctionTok{c}\NormalTok{(}\StringTok{"Sunday"}\NormalTok{, }\StringTok{"Monday"}\NormalTok{, }\StringTok{"Tuesday"}\NormalTok{, }\StringTok{"Wednesday"}\NormalTok{, }\StringTok{"Thursday"}\NormalTok{, }\StringTok{"Friday"}\NormalTok{, }\StringTok{"Saturday"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{now-lets-run-the-average-ride-time-by-each-day-for-members-vs-casual-users}{%
+\section{Now, let's run the average ride time by each day for members vs
+casual
+users}\label{now-lets-run-the-average-ride-time-by-each-day-for-members-vs-casual-users}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{aggregate}\NormalTok{(all\_trips\_v2}\SpecialCharTok{$}\NormalTok{ride\_length }\SpecialCharTok{\textasciitilde{}}\NormalTok{ all\_trips\_v2}\SpecialCharTok{$}\NormalTok{member\_casual }\SpecialCharTok{+}\NormalTok{ all\_trips\_v2}\SpecialCharTok{$}\NormalTok{day\_of\_week, }\AttributeTok{FUN =}\NormalTok{ mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    all_trips_v2$member_casual all_trips_v2$day_of_week
+## 1                      casual                   Sunday
+## 2                      member                   Sunday
+## 3                      casual                   Monday
+## 4                      member                   Monday
+## 5                      casual                  Tuesday
+## 6                      member                  Tuesday
+## 7                      casual                Wednesday
+## 8                      member                Wednesday
+## 9                      casual                 Thursday
+## 10                     member                 Thursday
+## 11                     casual                   Friday
+## 12                     member                   Friday
+## 13                     casual                 Saturday
+## 14                     member                 Saturday
+##    all_trips_v2$ride_length
+## 1                 3581.4054
+## 2                  919.9746
+## 3                 3372.2869
+## 4                  842.5726
+## 5                 3596.3599
+## 6                  826.1427
+## 7                 3718.6619
+## 8                  823.9996
+## 9                 3682.9847
+## 10                 823.9278
+## 11                3773.8351
+## 12                 824.5305
+## 13                3331.9138
+## 14                 968.9337
+\end{verbatim}
+
+\hypertarget{analyze-ridership-data-by-type-and-weekday}{%
+\section{analyze ridership data by type and
+weekday}\label{analyze-ridership-data-by-type-and-weekday}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{all\_trips\_v2 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{weekday =} \FunctionTok{wday}\NormalTok{(started\_at, }\AttributeTok{label =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}  \CommentTok{\#creates weekday field using wday()}
+  \FunctionTok{group\_by}\NormalTok{(member\_casual, weekday) }\SpecialCharTok{\%\textgreater{}\%}  \CommentTok{\#groups by usertype and weekday}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{number\_of\_rides =} \FunctionTok{n}\NormalTok{()                           }\CommentTok{\#calculates the number of rides and average duration }
+\NormalTok{            ,}\AttributeTok{average\_duration =} \FunctionTok{mean}\NormalTok{(ride\_length)) }\SpecialCharTok{\%\textgreater{}\%}      \CommentTok{\# calculates the average duration}
+  \FunctionTok{arrange}\NormalTok{(member\_casual, weekday)                               }\CommentTok{\# sorts}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 14 x 4
+## # Groups:   member_casual [2]
+##    member_casual weekday number_of_rides average_duration
+##    <chr>         <ord>             <int>            <dbl>
+##  1 casual        Sun              181293            3581.
+##  2 casual        Mon              103296            3372.
+##  3 casual        Tue               90510            3596.
+##  4 casual        Wed               92457            3719.
+##  5 casual        Thu              102679            3683.
+##  6 casual        Fri              122404            3774.
+##  7 casual        Sat              209543            3332.
+##  8 member        Sun              267965             920.
+##  9 member        Mon              472196             843.
+## 10 member        Tue              508445             826.
+## 11 member        Wed              500329             824.
+## 12 member        Thu              484177             824.
+## 13 member        Fri              452790             825.
+## 14 member        Sat              287958             969.
+\end{verbatim}
+
+\hypertarget{lets-visualize-the-number-of-rides-by-rider-type}{%
+\section{Let's visualize the number of rides by rider
+type}\label{lets-visualize-the-number-of-rides-by-rider-type}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{all\_trips\_v2 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{weekday =} \FunctionTok{wday}\NormalTok{(started\_at, }\AttributeTok{label =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(member\_casual, weekday) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{number\_of\_rides =} \FunctionTok{n}\NormalTok{()}
+\NormalTok{            ,}\AttributeTok{average\_duration =} \FunctionTok{mean}\NormalTok{(ride\_length)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(member\_casual, weekday)  }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ weekday, }\AttributeTok{y =}\NormalTok{ number\_of\_rides, }\AttributeTok{fill =}\NormalTok{ member\_casual)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{position =} \StringTok{"dodge"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Capstone1_files/figure-latex/unnamed-chunk-25-1.pdf}
+
+\hypertarget{lets-create-a-visualization-for-average-duration}{%
+\section{Let's create a visualization for average
+duration}\label{lets-create-a-visualization-for-average-duration}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{all\_trips\_v2 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{weekday =} \FunctionTok{wday}\NormalTok{(started\_at, }\AttributeTok{label =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(member\_casual, weekday) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{number\_of\_rides =} \FunctionTok{n}\NormalTok{()}
+\NormalTok{            ,}\AttributeTok{average\_duration =} \FunctionTok{mean}\NormalTok{(ride\_length)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(member\_casual, weekday)  }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ weekday, }\AttributeTok{y =}\NormalTok{ average\_duration, }\AttributeTok{fill =}\NormalTok{ member\_casual)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{position =} \StringTok{"dodge"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Capstone1_files/figure-latex/unnamed-chunk-26-1.pdf}
+
+\#================================================= \# STEP 5: EXPORT
+SUMMARY FILE FOR FURTHER ANALYSIS
+\#================================================= \# Create a csv file
+that we will visualize in Excel, Tableau, or my presentation software \#
+N.B.: This file location is for a Mac. If you are working on a PC,
+change the file location accordingly (most likely
+"C:\Users\YOUR\_USERNAME\Desktop...") to export the data. You can read
+more here: \url{https://datatofish.com/export-dataframe-to-csv-in-r/}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{counts }\OtherTok{\textless{}{-}} \FunctionTok{aggregate}\NormalTok{(all\_trips\_v2}\SpecialCharTok{$}\NormalTok{ride\_length }\SpecialCharTok{\textasciitilde{}}\NormalTok{ all\_trips\_v2}\SpecialCharTok{$}\NormalTok{member\_casual }\SpecialCharTok{+}\NormalTok{ all\_trips\_v2}\SpecialCharTok{$}\NormalTok{day\_of\_week, }\AttributeTok{FUN =}\NormalTok{ mean)}
+\FunctionTok{write.csv}\NormalTok{(counts, }\AttributeTok{file =} \StringTok{\textquotesingle{}avg\_ride\_length.csv\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+
+
+\end{document}
